@@ -1,0 +1,96 @@
+; Task Management Application Documentation
+; Overview
+; This application is a task management system built with a focus on managing tasks, updating their status, and deleting them. The application is split into two main parts: the client-side application and the server-side application. The client-side is built with React, while the server-side is built using Node.js with Express and MongoDB for data storage.
+
+; Technologies Used
+; Client-Side:
+
+; React: A JavaScript library for building user interfaces.
+; CSS: For styling the application.
+; Fetch API: For making HTTP requests to the server.
+; Server-Side:
+
+; Node.js: JavaScript runtime built on Chrome's V8 engine.
+; Express: Web application framework for Node.js.
+; MongoDB: NoSQL database for storing task data.
+; Mongoose: ODM (Object Data Modeling) library for MongoDB and Node.js.
+; Client-Side Application
+; Description
+; The client-side application is a React-based single-page application that allows users to view, add, update, and delete tasks. It interacts with the server-side API to perform these operations.
+
+; Components
+; TaskList Component
+
+; Purpose: Displays a list of tasks and provides options to update or delete tasks.
+; Functionalities:
+; Fetch tasks from the server and display them in a list.
+; Add a new task to the list.
+; Update the status of a task.
+; Delete a task.
+; Key Methods:
+; fetchTasks(): Fetches all tasks from the server and updates the state.
+; addTask(newTask): Adds a new task to the server and updates the state.
+; updateTask(id): Updates the status of a task on the server and updates the state.
+; deleteTask(id): Deletes a task from the server and updates the state.
+; State Management: Uses React's useState and useEffect hooks to manage and fetch task data.
+; TaskForm Component
+
+; Purpose: Provides a form to add a new task.
+; Functionalities:
+; Allows users to input task details and submit the form to add a new task.
+; CSS Styling
+; Container: Centers the content and limits the width to 60% of the viewport.
+; Task Items: Styled to ensure they are displayed correctly within the container, with proper padding and margins.
+; Server-Side Application
+; Description
+; The server-side application is built using Node.js with Express to handle HTTP requests and MongoDB with Mongoose to manage task data.
+
+; Endpoints
+; POST /api/tasks
+
+; Purpose: Create a new task.
+; Request Body: { "title": "string", "description": "string", "status": "string" }
+; Response: The created task.
+; GET /api/tasks
+
+; Purpose: Retrieve all tasks.
+; Response: An array of tasks.
+; GET /api/tasks/
+
+; Purpose: Retrieve a task by its ID.
+; Response: The task with the specified ID.
+; PATCH /api/tasks/
+
+; Purpose: Update a task by its ID.
+; Request Body: { "title": "string", "description": "string", "status": "string" }
+; Response: The updated task.
+; DELETE /api/tasks/
+
+; Purpose: Delete a task by its ID.
+; Response: The deleted task.
+; Database Schema
+; Task Model:
+; Fields:
+; title: String, required.
+; description: String, optional.
+; status: String, required (can be "pending", "in progress", or "completed").
+; Middleware
+; CORS: Allows cross-origin requests from the client-side application.
+; Body Parser: Parses incoming request bodies in JSON format.
+; Error Handling
+; Client-Side Errors: Display appropriate error messages based on the response from the server.
+; Server-Side Errors: Return relevant HTTP status codes and error messages for failed requests.
+; Setup and Installation
+; Server-Side:
+
+; Ensure Node.js and npm are installed.
+; Clone the repository and navigate to the server directory.
+; Run npm install to install dependencies.
+; Set up environment variables in a .env file (e.g., DATABASE, DB_PASSWORD).
+; Start the server using npm start.
+; Client-Side:
+
+; Ensure Node.js and npm are installed.
+; Navigate to the client directory.
+; Run npm install to install dependencies.
+; Start the React application using npm start.
